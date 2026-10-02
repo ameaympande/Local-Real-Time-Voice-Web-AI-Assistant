@@ -1,0 +1,32 @@
+{
+  "name": "local-voice-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local real-time voice + web AI assistant",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:backend & npm run dev:desktop",
+    "dev:backend": "npm run dev -w apps/backend",
+    "dev:desktop": "npm run dev -w apps/desktop",
+    "build": "npm run build -w packages/shared && npm run build -w apps/backend && npm run build -w apps/desktop",
+    "build:shared": "npm run build -w packages/shared",
+    "test": "npm run test -w apps/backend",
+    "lint": "eslint 'apps/*/src/**/*.{ts,tsx}' 'packages/*/src/**/*.ts'",
+    "typecheck": "npm run typecheck -w packages/shared && npm run typecheck -w apps/backend && npm run typecheck -w apps/desktop",
+    "setup": "bash scripts/setup-macos.sh",
+    "clean": "rm -rf node_modules apps/*/node_modules packages/*/node_modules apps/*/dist packages/*/dist"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

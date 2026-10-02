@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": ".",
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@local-voice-agent/shared": ["../../packages/shared/src"]
+    },
+    "composite": false
+  },
+  "include": ["src/**/*", "src/**/*.tsx"],
+  "exclude": ["electron/**/*"]
+}

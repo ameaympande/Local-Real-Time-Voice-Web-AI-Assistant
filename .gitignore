@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+out/
+release/
+*.wav
+*.mp3
+*.pcm
+whisper-models/
+.whisper/
